@@ -6,14 +6,15 @@ public class Application {
 
 	public static void main(String[] args) {
 		
-		Double a = 123456789012345678.0;
-		//Double a = 204.0;
+		long a = 123456789012345678L;
 		
-		List<Double> factors = PrimeFactor.primeFactor(a);
+		List<Long> factors = PrimeFactor.primeFactor(a);
 
-		for(Double d : factors) {
-			System.out.print(d.intValue() + "x");
+		StringBuilder s = new StringBuilder();
+		for(Long l : factors) {
+			s.append(l.toString() + "x");
 		}
+		
+		System.out.print(s.substring(0, s.length() -1));
 	}
-
 }
