@@ -20,13 +20,9 @@ public class Application {
 			in = br.readLine();
 			int tests = Integer.parseInt(in);
 			
-			if (tests == 0) {
-				tests = 1;
-			}
+			boolean bIsPrime = FermatLittleTheorem.isPrime(p, tests == 0 ? 1 : tests);
 			
-			boolean isPrime = FermatLittleTheorem.isPrime(p, tests);
-			
-			System.out.println("The number is " + (isPrime ? "prime" : "not prime"));
+			System.out.println("The number is " + (bIsPrime ? "prime" : "not prime"));
 			
 		} catch (NumberFormatException ne) {
 			ne.printStackTrace();
